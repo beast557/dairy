@@ -1,0 +1,35 @@
+**backend**
+    database
+        user` - username , password
+        dairy` - content , day month yr
+        draft`- dairy_id , user_id[1 to N]
+        publish` - dairy_id , user_id[1 to N]
+        bookmark` - dairy_id[1:N], user_id[1:N]
+    apis
+        user - login` , signup` , load`
+        dairy - create_dairy` , update_dairy , delete_dairy , search_dairy_with_pagination
+        bookmark - create_bookmark` , remove_bookmark` , view_bookmarks`
+    save` (/api/v1/dairy/save_dairy)
+        check if already exist if not exist 
+            save to dairy model`
+            save to draft model`
+        if exist 
+            update
+    publish` (/api/v1/dairy/publish_dairy)
+        save to publish model`
+        remove from draft model`     
+    save as bookmark` (/api/v1/dairy/bookmark_dairy)
+        save to bookmark model if not already`
+        if already exist with different dairy update it`
+        if already exist with same dairy delete it`
+
+    delete_dairy` (/api/v1/dairy/delete_dairy)
+        delete from dairy model `
+    
+    update_dairy (/api/v1/dairy/delete_dairy)
+
+    show draft `
+
+    show bookmark ` or check bookmark 
+
+    show published dairy according to date`
